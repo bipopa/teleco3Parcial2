@@ -30,7 +30,8 @@ service vsftpd restart
 
 
 echo "configuring firewall"
-
+sudo service firewalld start
+chkconfig firewalld on
 sudo firewall-cmd --zone=internal --change-interface=eth0
 sudo firewall-cmd --zone=internal --change-interface=eth2
 sudo firewall-cmd --zone=dmz --change-interface=eth1
